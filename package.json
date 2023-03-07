@@ -1,0 +1,42 @@
+{
+	"name": "vscode-code-spotlight",
+	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/johnsoncodehk/vscode-code-spotlight.git"
+	},
+	"sponsor": {
+		"url": "https://github.com/sponsors/johnsoncodehk"
+	},
+	"displayName": "Code Spotlight",
+	"description": "Code Spotlight",
+	"author": "johnsoncodehk",
+	"publisher": "johnsoncodehk",
+	"engines": {
+		"vscode": "^1.76.0"
+	},
+	"activationEvents": [
+		"onCommand:toggleCodeSpotlight"
+	],
+	"main": "out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "toggleCodeSpotlight",
+				"title": "Code Spotlight: Toggle"
+			}
+		]
+	},
+	"scripts": {
+		"build": "tsc",
+		"watch": "tsc --watch",
+		"pack": "yarn build && vsce package",
+		"release": "yarn build && vsce publish"
+	},
+	"devDependencies": {
+		"@types/node": "latest",
+		"@types/vscode": "1.76.0",
+		"typescript": "latest",
+		"vsce": "latest"
+	}
+}
