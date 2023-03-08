@@ -22,10 +22,42 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "toggleCodeSpotlight",
+				"command": "codeSpotlight.toggle",
 				"title": "Code Spotlight: Toggle"
+			},
+			{
+				"command": "codeSpotlight.enhance",
+				"title": "Code Spotlight: Enhance",
+				"enablement": "codeSpotlight.enhance.enabled",
+				"icon": {
+					"dark": "icons/dark/enhance.svg",
+					"light": "icons/light/enhance.svg"
+				}
+			},
+			{
+				"command": "codeSpotlight.weaken",
+				"title": "Code Spotlight: Weaken",
+				"enablement": "codeSpotlight.weaken.enabled",
+				"icon": {
+					"dark": "icons/dark/weaken.svg",
+					"light": "icons/light/weaken.svg"
+				}
 			}
-		]
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "codeSpotlight.enhance",
+					"when": "codeSpotlight.enabled",
+					"group": "navigation"
+				},
+				{
+					"command": "codeSpotlight.weaken",
+					"when": "codeSpotlight.enabled",
+					"group": "navigation"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"build": "tsc",
